@@ -40,7 +40,7 @@ function addJqueryUi(){
   document.getElementsByTagName('head')[0].appendChild(jqueryUi)
 }
 
-// Add reveal CSS
+// Add modal CSS
 function addModalCss(){
   var modalCss=document.createElement('link')
   modalCss.rel="stylesheet"
@@ -48,7 +48,7 @@ function addModalCss(){
   document.getElementsByTagName('head')[0].appendChild(modalCss)
 }
 
-// Add reveal JS
+// Add modal JS
 function addModalJs(){
   var done = false
   var modalJs = document.createElement('script')
@@ -62,14 +62,7 @@ function addModalJs(){
   document.getElementsByTagName('head')[0].appendChild(modalJs)
 }
 
-// Add custom CSS
-function addCustomCss() {
-  var myCss=document.createElement('link')
-  myCss.rel='stylesheet'
-  myCss.href='/Users/ryan/Desktop/bookmarklet/css/custom.css'
-  document.getElementsByTagName('head')[0].appendChild(myCss)
-}
-
+// calls to modal.js file
 function runModal(){
   Modal.init({content: 'Content goes here'})
 }
