@@ -1,3 +1,6 @@
+// Creates and appends modal
+// Accepts content as argument to be displayed in modal
+
 var Modal = {
 
 	init: function(settings){

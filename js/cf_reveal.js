@@ -1,3 +1,6 @@
+// This file uses the reveal JS library for the modal
+// instead of my custom built modal
+
 initialize()
 
 // initialize functions
