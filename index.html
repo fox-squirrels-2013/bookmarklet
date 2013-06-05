@@ -1,8 +1,30 @@
-<head></head>
+<head>
+<!-- Uncomment to test jQuery detection -->
+<!-- <script src="js/jquery.js"></script> -->
+</head>
 
-<h1>Bookmarklet</h1>
+<h1><a data-ryans-bookmarklet-link>Ryan's bookmarklet</a></h1>
 
-<form action="post">
-	<input type="text" placeholder="testing it yo!">
-	<input type="submit" value="Test">
-</form>
+<p>
+  To run the bookmarklet on this page just click the link. To run it on a different page, drag this to your bookmarks's bar then change to that tab then click on the bookmark.
+</p>
+
+<script>
+// capture the base url of this page
+var bookmarkletBaseUrl = window.location.toString().match(/(.+\/)[^\/]*$/)[1]
+
+// Create some javascript source code that (when run) will insert a new script
+// tag into the dom that references some more code to download and run. That
+// code will extract and use the data-base-url value in this script tag
+var bookmarkletCode =
+  [ "var scriptTag = document.createElement('SCRIPT')"
+  , "scriptTag.setAttribute('data-ryans-bookmarklet','')"
+  , "scriptTag.setAttribute('data-base-url','"+bookmarkletBaseUrl+"')"
+  , "scriptTag.src = '"+bookmarkletBaseUrl+"js/main.js'"
+  , "document.body.appendChild(scriptTag)"
+  ].join(";\n")
+
+document.querySelector("[data-ryans-bookmarklet-link]").setAttribute(
+  "href", "javascript:(function(){" + bookmarkletCode + "})()"
+)
+</script>
