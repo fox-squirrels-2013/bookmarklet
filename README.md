@@ -12,7 +12,7 @@ Then run
 
     http-server
 
-from this projects folder and visit http://localhost:8080/ in your browser.
+from this project's folder and visit http://localhost:8080/ in your browser.
 
 If old versions of the javascript and css files are being cached by chrome you can tell it not to cache these while the developer tools are open by first opening the developer tools then clicking the little gear icon down the bottom right then clicking the checkbox next to "Disable cache".
 
